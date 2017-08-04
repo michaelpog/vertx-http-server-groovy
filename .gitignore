@@ -1,0 +1,13 @@
+.classpath
+.project
+.settings
+target
+.svn
+lib
+.idea
+*.iml
+*.swp
+build/
+out/
+.DS_Store
+pom.xml.versionsBackup
