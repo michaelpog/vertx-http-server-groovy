@@ -3,6 +3,7 @@ import groovy.json.JsonSlurper
 import groovy.transform.Field
 import io.netty.handler.codec.http.HttpHeaderValues
 import io.vertx.core.Vertx
+import io.vertx.core.VertxOptions
 import io.vertx.core.http.HttpHeaders
 import io.vertx.core.http.HttpMethod
 import io.vertx.core.logging.Logger
@@ -10,7 +11,9 @@ import io.vertx.core.logging.LoggerFactory
 import io.vertx.ext.web.Router
 import io.vertx.ext.web.handler.BodyHandler
 
-def vertx = Vertx.vertx()
+def options = new VertxOptions();
+options.setFileResolverCachingEnabled(false);
+def vertx = Vertx.vertx(options)
 def server = vertx.createHttpServer()
 def router = Router.router(vertx)
 router.route().handler(BodyHandler.create())
