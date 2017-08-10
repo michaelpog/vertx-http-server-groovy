@@ -12,7 +12,7 @@ import io.vertx.ext.web.Router
 import io.vertx.ext.web.handler.BodyHandler
 
 def options = new VertxOptions();
-options.setFileResolverCachingEnabled(false);
+options.setFileResolverCachingEnabled(true);
 def vertx = Vertx.vertx(options)
 def server = vertx.createHttpServer()
 def router = Router.router(vertx)
